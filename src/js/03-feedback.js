@@ -12,11 +12,15 @@ const formData = {};
 
 function onFormData(e) {
   formData[e.target.name] = e.target.value;
+  // const formDate = {
+  //   email: email.value,
+  //   message: message.value,
+  // }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
 function onSubmitForm(evt) {
-//   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   evt.preventDefault();
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
