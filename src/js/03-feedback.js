@@ -8,14 +8,14 @@ const STORAGE_KEY = 'feedback-form-state'
 form.addEventListener('submit', onSubmitForm);
 form.addEventListener('input', throttle(onFormData, 500));
 
-const formData = {};
+// const formData = {};
 
 function onFormData(e) {
-  formData[e.target.name] = e.target.value;
-  // const formDate = {
-  //   email: email.value,
-  //   message: message.value,
-  // }
+  // formData[e.target.name] = e.target.value;
+  const formDate = {
+    email: email.value,
+    message: message.value,
+  }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
